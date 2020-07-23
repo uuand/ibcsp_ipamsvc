@@ -31,11 +31,13 @@ class TypesJSONValue(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'value': 'str'
+        'value': 'str',
+        'key' : 'str'
     }
 
     attribute_map = {
-        'value': 'value'
+        'value': 'value',
+        'key': 'key'
     }
 
     def __init__(self, value=None):  # noqa: E501
