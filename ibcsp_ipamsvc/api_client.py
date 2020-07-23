@@ -250,7 +250,6 @@ class ApiClient(object):
         """
         if data is None:
             return None
-
         if type(klass) == str:
             if klass.startswith('list['):
                 sub_kls = re.match(r'list\[(.*)\]', klass).group(1)
@@ -609,7 +608,9 @@ class ApiClient(object):
         :param klass: class literal.
         :return: model object.
         """
-
+        tags = False
+        if klass == ibcsp_ipamsvc.models.types_json_value.TypesJSONValue:
+            tags = True
         if (not klass.swagger_types and
                 not self.__hasattr(klass, 'get_real_child_model')):
             return data
@@ -622,8 +623,10 @@ class ApiClient(object):
                         isinstance(data, (list, dict))):
                     value = data[klass.attribute_map[attr]]
                     kwargs[attr] = self.__deserialize(value, attr_type)
-
-        instance = klass(**kwargs)
+        if tags:
+            instance = data
+        else:
+            instance = klass(**kwargs)
 
         if (isinstance(instance, dict) and
                 klass.swagger_types is not None and

@@ -31,18 +31,15 @@ class TypesJSONValue(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'key' : 'str',
         'value': 'str'
     }
 
     attribute_map = {
-        'key': 'key',
         'value': 'value'
     }
 
     def __init__(self, value=None):  # noqa: E501
         """TypesJSONValue - a model defined in Swagger"""  # noqa: E501
-
         self._value = None
         self.discriminator = None
 
@@ -70,32 +67,11 @@ class TypesJSONValue(object):
 
         self._value = value
 
-    @property
-    def key(self):
-        """Gets the value of this TypesJSONValue.  # noqa: E501
-
-
-        :return: The value of this TypesJSONValue.  # noqa: E501
-        :rtype: str
-        """
-        return self._key
-
-    @value.setter
-    def key(self, key):
-        """Sets the value of this TypesJSONValue.
-
-
-        :param value: The value of this TypesJSONValue.  # noqa: E501
-        :type: str
-        """
-
-        self._key = key
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}
 
-        for attr, _ in six.iteritems(self.swagger_types):
+        for attr, k in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
             if isinstance(value, list):
                 result[attr] = list(map(
