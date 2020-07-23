@@ -39,7 +39,7 @@ class IpamsvcIPSpace(object):
         'id': 'str',
         'inheritance_sources': 'IpamsvcDHCPInheritance',
         'name': 'str',
-        'tags': 'TypesJSONValue',
+        'tags': 'dict',
         'threshold': 'IpamsvcUtilizationThreshold',
         'utilization': 'IpamsvcUtilization'
     }
