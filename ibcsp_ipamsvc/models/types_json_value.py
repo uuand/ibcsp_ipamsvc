@@ -70,6 +70,27 @@ class TypesJSONValue(object):
 
         self._value = value
 
+    @property
+    def key(self):
+        """Gets the value of this TypesJSONValue.  # noqa: E501
+
+
+        :return: The value of this TypesJSONValue.  # noqa: E501
+        :rtype: str
+        """
+        return self._key
+
+    @value.setter
+    def key(self, key):
+        """Sets the value of this TypesJSONValue.
+
+
+        :param value: The value of this TypesJSONValue.  # noqa: E501
+        :type: str
+        """
+
+        self._key = key
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}
