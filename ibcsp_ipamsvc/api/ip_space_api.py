@@ -315,7 +315,7 @@ class IpSpaceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['fields', 'filter', 'offset', 'limit', 'page_token', 'order_by', 'torder_by', 'tfilter']  # noqa: E501
+        all_params = ['fields', 'filter', 'inherit', 'offset', 'limit', 'page_token', 'order_by', 'torder_by', 'tfilter']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -340,6 +340,8 @@ class IpSpaceApi(object):
             query_params.append(('_fields', params['fields']))  # noqa: E501
         if 'filter' in params:
             query_params.append(('_filter', params['filter']))  # noqa: E501
+        if 'inherit' in params:
+            query_params.append(('_inherit', params['inherit']))  # noqa: E501
         if 'offset' in params:
             query_params.append(('_offset', params['offset']))  # noqa: E501
         if 'limit' in params:
